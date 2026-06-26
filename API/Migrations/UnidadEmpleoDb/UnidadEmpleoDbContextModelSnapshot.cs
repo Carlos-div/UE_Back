@@ -65,7 +65,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Corporacion");
+                    b.ToTable("Corporacion", (string)null);
                 });
 
             modelBuilder.Entity("API.Common.Domain.Region", b =>
@@ -80,7 +80,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Region");
+                    b.ToTable("Region", (string)null);
                 });
 
             modelBuilder.Entity("API.Seguridad.Domain.Audit.EntityChangeLog", b =>
@@ -118,7 +118,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("EntityChangeLogs");
+                    b.ToTable("EntityChangeLogs", (string)null);
                 });
 
             modelBuilder.Entity("API.UnidadEmpleo.Domain.Anexo", b =>
@@ -161,7 +161,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Anexos");
+                    b.ToTable("Anexos", (string)null);
                 });
 
             modelBuilder.Entity("API.UnidadEmpleo.Domain.Aspirante", b =>
@@ -278,7 +278,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasIndex("IdCuerpoCaptura");
 
-                    b.ToTable("Aspirante");
+                    b.ToTable("Aspirante", (string)null);
                 });
 
             modelBuilder.Entity("API.UnidadEmpleo.Domain.CartaCompromiso", b =>
@@ -308,7 +308,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasIndex("IdSoliciud");
 
-                    b.ToTable("CartaCompromiso");
+                    b.ToTable("CartaCompromiso", (string)null);
                 });
 
             modelBuilder.Entity("API.UnidadEmpleo.Domain.Evaluacion", b =>
@@ -361,7 +361,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasIndex("IdSoliciud");
 
-                    b.ToTable("Evaluacion");
+                    b.ToTable("Evaluacion", (string)null);
                 });
 
             modelBuilder.Entity("API.UnidadEmpleo.Domain.Referencia", b =>
@@ -448,7 +448,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasIndex("IdSoliciud");
 
-                    b.ToTable("Referencia");
+                    b.ToTable("Referencia", (string)null);
                 });
 
             modelBuilder.Entity("API.UnidadEmpleo.Domain.Solicitud", b =>
@@ -644,7 +644,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasIndex("RegionId");
 
-                    b.ToTable("Solicitud");
+                    b.ToTable("Solicitud", (string)null);
                 });
 
             modelBuilder.Entity("CuerpoRegion", b =>
@@ -659,7 +659,7 @@ namespace API.Migrations.UnidadEmpleoDb
 
                     b.HasIndex("RegionesId");
 
-                    b.ToTable("CuerpoRegion");
+                    b.ToTable("CuerpoRegion", (string)null);
                 });
 
             modelBuilder.Entity("API.UnidadEmpleo.Domain.Aspirante", b =>

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace API.Migrations
 {
     /// <inheritdoc />
-    public partial class initialMigration : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -108,8 +108,8 @@ namespace API.Migrations
                     d_estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     d_tipo_asenta = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     d_asenta = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    latitud = table.Column<float>(type: "real", nullable: false),
-                    longitud = table.Column<float>(type: "real", nullable: false)
+                    latitud = table.Column<double>(type: "float", nullable: false),
+                    longitud = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {

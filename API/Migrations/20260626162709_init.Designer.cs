@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260624220850_initialMigration")]
-    partial class initialMigration
+    [Migration("20260626162709_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,11 +58,11 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("latitud")
-                        .HasColumnType("real");
+                    b.Property<double>("latitud")
+                        .HasColumnType("float");
 
-                    b.Property<float>("longitud")
-                        .HasColumnType("real");
+                    b.Property<double>("longitud")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

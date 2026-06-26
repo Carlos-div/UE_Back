@@ -71,27 +71,14 @@ namespace API.UnidadEmpleo.Persistence
                     },
                     new Cuerpo { Id="CGSIBCVT", Nombre = "Cuerpo de Guardias de Seguridad Industrial, Bancaria y Comercial del Valle de Toluca",
                         Calle = "Atotonilco S/N",Numero = 0,
-                        alias = "Loma",
+                        alias = "Lerma",
                         Pais = "México",CodigoPostal = 52000,Estado = "Estado de México",
                         Municipio = "Lerma de Villada",Colonia = "Parque Industrial Lerma", Regiones = LermaRegiones
                     }
                 };
                 await context.Corporacion.AddRangeAsync(corporaciones);
                 await context.SaveChangesAsync();
-                /*
-                Cuerpo loma = await context.Set<Cuerpo>().FindAsync("CGSIBCVCT");
-                loma.Regiones = regiones;
-                var result = await context.SaveChangesAsync() > 0;
-
-                Cuerpo auxiliar= await context.Set<Cuerpo>().FindAsync("CVAUEM");
-                auxiliar.Regiones = AuxiliarRegiones;
-                var result1 = await context.SaveChangesAsync() > 0;
-
-                Cuerpo lerma = await context.Set<Cuerpo>().FindAsync("CGSIBCVT");
-                lerma.Regiones = LermaRegiones;
-                var result2 = await context.SaveChangesAsync() > 0;
-                */
-
+                
             }
         }
     }

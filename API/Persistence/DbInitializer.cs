@@ -1002,7 +1002,8 @@ namespace API.Persistence
                 await context.RolesProcesos.AddRangeAsync(gerenteProceso);
 
                 var medicoRole = await roleManager.FindByNameAsync("Medico");
-                var medicoProceso = allProcesos.Where(p => p.Descr == "Evaluaciones" || p.Descr == "Personal").Select(p =>
+                var medicoProceso = allProcesos.Where(p => p.Descr == "Evaluaciones" || p.Descr == "Personal" 
+                || p.Descr == "Unidad de Empleo" || p.Descr == "Solicitudes").Select(p =>
                         new RolProceso { RolId = medicoRole.Id, ProcesoId = p.Id }
                 ).ToList();
                 await context.RolesProcesos.AddRangeAsync(medicoProceso);

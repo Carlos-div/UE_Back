@@ -55,11 +55,11 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("latitud")
-                        .HasColumnType("real");
+                    b.Property<double>("latitud")
+                        .HasColumnType("float");
 
-                    b.Property<float>("longitud")
-                        .HasColumnType("real");
+                    b.Property<double>("longitud")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
