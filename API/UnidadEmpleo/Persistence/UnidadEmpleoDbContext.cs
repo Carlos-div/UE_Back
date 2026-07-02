@@ -41,7 +41,7 @@ namespace API.UnidadEmpleo.Persistence
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
-                    .UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=UnidadEmpleo;Integrated Security=True;TrustServerCertificate=True")
+                    .UseSqlServer("Server=(localdb)\\DLOMDTI8M2\\SQLEXPRESS;Database=UnidadEmpleo;Integrated Security=True;TrustServerCertificate=True")
                     .ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
             }
             else

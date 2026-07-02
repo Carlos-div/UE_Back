@@ -14,7 +14,7 @@ namespace API.UnidadEmpleo.Persistence
         public UnidadEmpleoDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<UnidadEmpleoDbContext>();
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=UnidadEmpleo;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\DLOMDTI8M2\\SQLEXPRESS;Database=UnidadEmpleo;Integrated Security=True;TrustServerCertificate=True");
             return new UnidadEmpleoDbContext(optionsBuilder.Options);
         }
     }
@@ -69,7 +69,10 @@ namespace API.UnidadEmpleo.Persistence
             var dbContext = new UnidadEmpleoDbContext(optionsBuilder.Options, _httpContextAccessor);
 
             var conn = dbContext.Database.GetDbConnection().ConnectionString;
+            
+            Console.WriteLine("=================================");
             Console.WriteLine(conn);
+            Console.WriteLine("=================================");
 
 
             return dbContext;

@@ -64,7 +64,7 @@ namespace API.Persistence
             
             if (!await roleManager.RoleExistsAsync("Medico"))
             {
-                await roleManager.CreateAsync(new AppIdentityRole { Name = "Medico", Activo = true, Descripcion = "Rol de médico", Value = "medico", TipoRol = TipoRoles.Medico });
+                await roleManager.CreateAsync(new AppIdentityRole { Name = "Medico", Activo = true, Descripcion = "Rol de mï¿½dico", Value = "medico", TipoRol = TipoRoles.Medico });
             }
             
             if (!await roleManager.RoleExistsAsync("AtencionRegistro"))
@@ -153,7 +153,7 @@ namespace API.Persistence
                     {
                         Id = atencionRegistroGrupoId,
                         Nombre = "ATNREG",
-                        Descr = "Grupo de Usuarios tipo Atención y Registro",
+                        Descr = "Grupo de Usuarios tipo Atenciï¿½n y Registro",
                         Activo = true,
                         FechaCreacion = DateTime.UtcNow,
                         FechaUltimaActualizacion = DateTime.UtcNow
@@ -484,13 +484,13 @@ namespace API.Persistence
                     {
                         Id = Guid.NewGuid().ToString(),
                         Nombre = "Loma",
-                        Descripcion = "Corporación la Loma",
+                        Descripcion = "Corporaciï¿½n la Loma",
                     },
                     new Corporacion
                     {
                         Id = Guid.NewGuid().ToString(),
                         Nombre = "Santa Rosa",
-                        Descripcion = "Corporación Santa Rosa",
+                        Descripcion = "Corporaciï¿½n Santa Rosa",
                     }
                     ,
                     new Corporacion
@@ -529,29 +529,29 @@ namespace API.Persistence
                     new EntidadFederativa { Id = 6, Nombre = "COLIMA", Abreviacion = "CM" },
                     new EntidadFederativa { Id = 7, Nombre = "CHIAPAS", Abreviacion = "CS" },
                     new EntidadFederativa { Id = 8, Nombre = "CHIHUAHUA", Abreviacion = "CH" },
-                    new EntidadFederativa { Id = 9, Nombre = "CIUDAD DE MÉXICO", Abreviacion = "DF" },
+                    new EntidadFederativa { Id = 9, Nombre = "CIUDAD DE Mï¿½XICO", Abreviacion = "DF" },
                     new EntidadFederativa { Id = 10, Nombre = "DURANGO", Abreviacion = "DG" },
                     new EntidadFederativa { Id = 11, Nombre = "GUANAJUATO", Abreviacion = "GT" },
                     new EntidadFederativa { Id = 12, Nombre = "GUERRERO", Abreviacion = "GR" },
                     new EntidadFederativa { Id = 13, Nombre = "HIDALGO", Abreviacion = "HG" },
                     new EntidadFederativa { Id = 14, Nombre = "JALISCO", Abreviacion = "JC" },
-                    new EntidadFederativa { Id = 15, Nombre = "MÉXICO", Abreviacion = "MC" },
-                    new EntidadFederativa { Id = 16, Nombre = "MICHOACÁN", Abreviacion = "MN" },
+                    new EntidadFederativa { Id = 15, Nombre = "Mï¿½XICO", Abreviacion = "MC" },
+                    new EntidadFederativa { Id = 16, Nombre = "MICHOACï¿½N", Abreviacion = "MN" },
                     new EntidadFederativa { Id = 17, Nombre = "MORELOS", Abreviacion = "MS" },
                     new EntidadFederativa { Id = 18, Nombre = "NAYARIT", Abreviacion = "NT" },
-                    new EntidadFederativa { Id = 19, Nombre = "NUEVO LEÓN", Abreviacion = "NL" },
+                    new EntidadFederativa { Id = 19, Nombre = "NUEVO LEï¿½N", Abreviacion = "NL" },
                     new EntidadFederativa { Id = 20, Nombre = "OAXACA", Abreviacion = "OC" },
                     new EntidadFederativa { Id = 21, Nombre = "PUEBLA", Abreviacion = "PL" },
-                    new EntidadFederativa { Id = 22, Nombre = "QUERÉTARO", Abreviacion = "QT" },
+                    new EntidadFederativa { Id = 22, Nombre = "QUERï¿½TARO", Abreviacion = "QT" },
                     new EntidadFederativa { Id = 23, Nombre = "QUINTANA ROO", Abreviacion = "QR" },
-                    new EntidadFederativa { Id = 24, Nombre = "SAN LUIS POTOSÍ", Abreviacion = "SP" },
+                    new EntidadFederativa { Id = 24, Nombre = "SAN LUIS POTOSï¿½", Abreviacion = "SP" },
                     new EntidadFederativa { Id = 25, Nombre = "SINALOA", Abreviacion = "SL" },
                     new EntidadFederativa { Id = 26, Nombre = "SONORA", Abreviacion = "SR" },
                     new EntidadFederativa { Id = 27, Nombre = "TABASCO", Abreviacion = "TC" },
                     new EntidadFederativa { Id = 28, Nombre = "TAMAULIPAS", Abreviacion = "TS" },
                     new EntidadFederativa { Id = 29, Nombre = "TLAXCALA", Abreviacion = "TL" },
                     new EntidadFederativa { Id = 30, Nombre = "VERACRUZ", Abreviacion = "VZ" },
-                    new EntidadFederativa { Id = 31, Nombre = "YUCATÁN", Abreviacion = "YN" },
+                    new EntidadFederativa { Id = 31, Nombre = "YUCATï¿½N", Abreviacion = "YN" },
                     new EntidadFederativa { Id = 32, Nombre = "ZACATECAS", Abreviacion = "ZS" },
                     new EntidadFederativa { Id = 33, Nombre = "EXTRANJERO", Abreviacion = "EX" }
                 };
@@ -567,21 +567,21 @@ namespace API.Persistence
                     {
                         Id = 1,
                         Nombre = "Sistema Administrativo",
-                        Descripcion = "Sistema para la gestión administrativa",
+                        Descripcion = "Sistema para la gestiï¿½n administrativa",
                         Activo = true
                     },
                     new Sistema
                     {
                         Id = 2,
-                        Nombre = "Sistema Clínico",
-                        Descripcion = "Sistema para la gestión clínica",
+                        Nombre = "Sistema Clï¿½nico",
+                        Descripcion = "Sistema para la gestiï¿½n clï¿½nica",
                         Activo = true
                     },
                     new Sistema
                     {
                         Id = 3,
                         Nombre = "Sistema Unidad de Empleo",
-                        Descripcion = "Sistema para la gestión de aspirantes a causar alta en los CUSAEM",
+                        Descripcion = "Sistema para la gestiï¿½n de aspirantes a causar alta en los CUSAEM",
                         Activo = true
                     },
 
@@ -592,7 +592,7 @@ namespace API.Persistence
 
             if (!context.BasesDatos.Any())
             {
-                var serverName = configuration["DatabaseSettings:ServerName"] ?? "(localdb)\\MSSQLLocalDB";
+                var serverName = configuration["DatabaseSettings:ServerName"] ?? "(localdb)\\DLOMDTI8M2\\SQLEXPRESS";
 
                 var basesDatos = new List<BaseDatos>
                 {
@@ -608,7 +608,7 @@ namespace API.Persistence
                     {
                         Id = 2,
                         Nombre = "BaseDatosClinica",
-                        Descripcion = "Base de datos para el sistema clínico",
+                        Descripcion = "Base de datos para el sistema clï¿½nico",
                         DatabaseName = "Clinica",
                         ServerName = serverName,
                     },
@@ -616,7 +616,7 @@ namespace API.Persistence
                     {
                         Id = 3,
                         Nombre = "BaseDatosUnidadEmpleo",
-                        Descripcion = "Base de datos para el sistema clínico",
+                        Descripcion = "Base de datos para el sistema clï¿½nico",
                         DatabaseName = "UnidadEmpleo",
                         ServerName = serverName,
                     }
@@ -693,8 +693,8 @@ namespace API.Persistence
                 new EstadoCivil
                 {
                     Id = 5,
-                    Nombre = "Unión Libre",
-                    Descripcion = "Persona en unión libre",
+                    Nombre = "Uniï¿½n Libre",
+                    Descripcion = "Persona en uniï¿½n libre",
                     Activo = true,
                     FechaCreacion = DateTime.UtcNow,
                     FechaUltimaActualizacion = DateTime.UtcNow
@@ -746,7 +746,7 @@ namespace API.Persistence
                     {
                         Id = 1,
                         Nombre = "Primaria",
-                        Descripcion = "Educación primaria",
+                        Descripcion = "Educaciï¿½n primaria",
                         Activo = true,
                         FechaCreacion = DateTime.UtcNow,
                         FechaUltimaActualizacion = DateTime.UtcNow
@@ -755,7 +755,7 @@ namespace API.Persistence
                     {
                         Id = 2,
                         Nombre = "Secundaria",
-                        Descripcion = "Educación secundaria",
+                        Descripcion = "Educaciï¿½n secundaria",
                         Activo = true,
                         FechaCreacion = DateTime.UtcNow,
                         FechaUltimaActualizacion = DateTime.UtcNow
@@ -764,7 +764,7 @@ namespace API.Persistence
                     {
                         Id = 3,
                         Nombre = "Preparatoria",
-                        Descripcion = "Educación preparatoria o bachillerato",
+                        Descripcion = "Educaciï¿½n preparatoria o bachillerato",
                         Activo = true,
                         FechaCreacion = DateTime.UtcNow,
                         FechaUltimaActualizacion = DateTime.UtcNow
@@ -773,7 +773,7 @@ namespace API.Persistence
                     {
                         Id = 4,
                         Nombre = "Licenciatura",
-                        Descripcion = "Educación universitaria de licenciatura",
+                        Descripcion = "Educaciï¿½n universitaria de licenciatura",
                         Activo = true,
                         FechaCreacion = DateTime.UtcNow,
                         FechaUltimaActualizacion = DateTime.UtcNow
@@ -781,8 +781,8 @@ namespace API.Persistence
                     new NivelEducativo
                     {
                         Id = 5,
-                        Nombre = "Maestría",
-                        Descripcion = "Posgrado de maestría",
+                        Nombre = "Maestrï¿½a",
+                        Descripcion = "Posgrado de maestrï¿½a",
                         Activo = true,
                         FechaCreacion = DateTime.UtcNow,
                         FechaUltimaActualizacion = DateTime.UtcNow
@@ -854,13 +854,19 @@ namespace API.Persistence
                await context.Procesos.AddRangeAsync(procesosPadres);
                await context.SaveChangesAsync();
 
+<<<<<<< Updated upstream
                // Obtener los IDs de los procesos padres recién insertados
+=======
+               // Obtener los IDs de los procesos padres reciï¿½n insertados
+
+               
+>>>>>>> Stashed changes
                var gestionUsuario = await context.Procesos.FirstAsync(p => p.Descr == "Gestion de Usuario" && p.Tipo == "A");
                var uniEmp = await context.Procesos.FirstAsync(p => p.Descr == "Unidad de Empleo" && p.Tipo == "A");
                var evaluacion = await context.Procesos.FirstAsync(p => p.Descr == "Evaluaciones" && p.Tipo == "A");
                
 
-               // FASE 2: Insertar procesos HIJOS (con ProcesoPadreId válidos)
+               // FASE 2: Insertar procesos HIJOS (con ProcesoPadreId vï¿½lidos)
                var procesosHijos = new List<Proceso>
                {
                    //GESTION DE USUARIO
