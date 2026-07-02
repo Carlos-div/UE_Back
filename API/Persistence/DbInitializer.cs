@@ -854,13 +854,7 @@ namespace API.Persistence
                await context.Procesos.AddRangeAsync(procesosPadres);
                await context.SaveChangesAsync();
 
-<<<<<<< Updated upstream
-               // Obtener los IDs de los procesos padres recién insertados
-=======
                // Obtener los IDs de los procesos padres reciï¿½n insertados
-
-               
->>>>>>> Stashed changes
                var gestionUsuario = await context.Procesos.FirstAsync(p => p.Descr == "Gestion de Usuario" && p.Tipo == "A");
                var uniEmp = await context.Procesos.FirstAsync(p => p.Descr == "Unidad de Empleo" && p.Tipo == "A");
                var evaluacion = await context.Procesos.FirstAsync(p => p.Descr == "Evaluaciones" && p.Tipo == "A");
