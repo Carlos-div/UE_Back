@@ -71,30 +71,100 @@ namespace API.Seguridad.Controllers
             float yNombres = 660;
 
             // CURP
-            float xCurp = 60;
-            float yCurp = 625;
+            float xCurp = 50;
+            float yCurp = 620;
 
             // RFC
-            float xRfc = 300;
-            float yRfc = 625;
+            //float xRfc = 300;
+            //float yRfc = 625;
+
+            // Fecha nacimiento
+            float xDiaNacimiento = 535;
+            float xMesNacimiento = 590;
+            float xAnioNacimiento = 665;
+            float yNacimiento = 622;
+
+            // Número de prealta
+            float xPrealta = 610;
+            float yPrealta = 742;
+
+            // Fecha solicitud
+            float xDiaSolicitud = 565;
+            float xMesSolicitud = 625;
+            float xAnioSolicitud = 695;
+            float yFechaSolicitud = 704;
 
             // Domicilio
             float xCalle = 60;
-            float xNumero = 520;
+            float xNumero = 500;
             float yCalle = 540;
 
-            float xEntreCalles = 60;
-            float yEntreCalles = 515;
+            float xEntreCalles = 55;
+            float yEntreCalles = 521;
 
-            float xColonia = 60;
-            float xEstado = 360;
+            float xColonia = 30;
+            float xCP = 250;
+            float xEstado = 345;
             float xMunicipio = 520;
-            float xCP = 280;
-            float yColonia = 490;
+            float yColonia = 493;
 
             // Celular
             float xCelular = 280;
             float yCelular = 455;
+            float xCasa = 55;
+
+            float xRecado = 565;
+            float yTelefonos = 438;
+
+        
+            // ESCOLARIDAD
+
+            float xEscolaridad = 120;
+            float xDocumento = 560;
+            float yEscolaridad = 387;
+
+
+            // ÚLTIMO EMPLEO
+
+            float xEmpresa = 330;
+            float yEmpresa = 335;
+
+            float xDescripcion = 60;
+            float yDescripcion = 307;
+
+            float xPuesto = 560;
+
+            float xJefe = 110;
+            float yJefe = 279;
+
+            float xTelefonoEmpresa = 360;
+
+            float xFechaInicio = 520;
+            float xFechaFin = 650;
+
+
+            // MOTIVO DE BAJA
+
+            float xMotivo = 130;
+            float yMotivo = 248;
+
+
+            // POLICÍA
+
+            float xGradoInicioPolicia = 170;
+            float yGradoInicioPolicia = 219;
+
+            float xGradoFinalPolicia = 170;
+            float yGradoFinalPolicia = 205;
+
+
+            // MILITAR
+
+            float xGradoInicioMilitar = 545;
+            float yGradoInicioMilitar = 219;
+
+            float xGradoFinalMilitar = 545;
+            float yGradoFinalMilitar = 205;
 
             // DATOS PERSONALES
         
@@ -102,8 +172,24 @@ namespace API.Seguridad.Controllers
             Escribir(document, aspirante.Apellido_Materno ?? "", xApellidoM, yNombres, 12);
             Escribir(document, aspirante.Nombre ?? "", xNombre, yNombres, 12);
 
-            Escribir(document, aspirante.Curp ?? "", xCurp, yCurp, 11);
-            Escribir(document, aspirante.Rfc ?? "", xRfc, yRfc, 11);
+            Escribir(document, aspirante.Curp ?? "", xCurp, yCurp, 12);
+            //Escribir(document, aspirante.Rfc ?? "", xRfc, yRfc, 11);
+
+            // Fecha de nacimiento
+            Escribir(document,
+            aspirante.Fecha_Nacimiento.Day.ToString("00"),
+            xDiaNacimiento,
+            yNacimiento);
+
+            Escribir(document,
+            aspirante.Fecha_Nacimiento.Month.ToString("00"),
+            xMesNacimiento,
+            yNacimiento);
+
+            Escribir(document,
+            aspirante.Fecha_Nacimiento.Year.ToString(),
+            xAnioNacimiento,
+            yNacimiento);
 
             // DOMICILIO
 
