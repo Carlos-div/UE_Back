@@ -135,7 +135,11 @@ public class GetPresolicitud
                 // MEDIO ENTERO
                 //---------------------------------------
 
-                MedioEntero = s.enteraEmpleo.ToString(),
+                MedioEntero = (int)s.enteraEmpleo,
+
+                // corpor
+
+                CorporacionAlias = s.Corporacion.alias,
 
                 //---------------------------------------
                 // EMPLEO

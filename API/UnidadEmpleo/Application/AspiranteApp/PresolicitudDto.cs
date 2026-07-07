@@ -72,7 +72,10 @@ namespace API.UnidadEmpleo.Application.AspiranteApp
         // MEDIO POR EL QUE SE ENTERÓ
         //==================================
 
-        public string MedioEntero { get; set; }
+        public int MedioEntero { get; set; }
+
+        // corpo
+        public string CorporacionAlias { get; set; }
 
         //==================================
         // EMPLEO

@@ -120,7 +120,7 @@ namespace API.Seguridad.Controllers
             // ESCOLARIDAD
 
             float xEscolaridad = 100;
-            float xDocumento = 445;
+            float xDocumento = 405;
             float yEscolaridad = 408;
 
 
@@ -259,6 +259,44 @@ namespace API.Seguridad.Controllers
                 EscribirCirculo(document, datos.EstadoCivil=="Divorciado",380,601);
 
                 //=========================================
+                // CORPORACIÓN
+                //=========================================
+
+                float xCorporacion = 45;
+                float yCorporacion = 681;
+
+
+                //=========================================
+                // CÓMO SE ENTERÓ
+                //=========================================
+
+                float xReingreso = 350;
+                float yReingreso = 590;
+
+                float xVolante = 400;
+                float yVolante = 590;
+
+                float xReclutador = 457;
+                float yReclutador = 590;
+
+                float xEmpresaParticular = 580;
+                float yEmpresaParticular = 590;
+
+                float xCentro = 111;
+                float yCentro = 580;
+
+                float xIniciativa = 245;
+                float yIniciativa = 580;
+
+                float xFeria = 340;
+                float yFeria = 580;
+
+                float xBolsa = 402;
+                float yBolsa = 580;
+
+                float xConocido = 580;
+                float yConocido = 580;
+                //=========================================
                 // PENSIONADO
                 //=========================================
 
@@ -267,20 +305,23 @@ namespace API.Seguridad.Controllers
                     712,
                     597);
 
+                // corpo
+                Escribir(document, datos.CorporacionAlias, xCorporacion, yCorporacion, 10);
+
                 //=========================================
                 // COMO SE ENTERÓ
                 //=========================================
 
-                EscribirCirculo(document, datos.MedioEntero=="Reingreso",388,575);
-                EscribirCirculo(document, datos.MedioEntero=="Volante",489,566);
-                EscribirCirculo(document, datos.MedioEntero=="Reclutador",585,566);
-                EscribirCirculo(document, datos.MedioEntero=="EmpresaParticular",713,566);
+                EscribirCirculo(document, datos.MedioEntero == 1, xReingreso, yReingreso);
+                EscribirCirculo(document, datos.MedioEntero == 2, xVolante, yVolante);
+                EscribirCirculo(document, datos.MedioEntero == 3, xReclutador, yReclutador);
+                EscribirCirculo(document, datos.MedioEntero == 4, xEmpresaParticular, yEmpresaParticular);
 
-                EscribirCirculo(document, datos.MedioEntero=="Centro",143,547);
-                EscribirCirculo(document, datos.MedioEntero=="Iniciativa",292,547);
-                EscribirCirculo(document, datos.MedioEntero=="Feria",423,547);
-                EscribirCirculo(document, datos.MedioEntero=="BolsaTrabajo",400,567);
-                EscribirCirculo(document, datos.MedioEntero=="Conocido",713,547);
+                EscribirCirculo(document, datos.MedioEntero == 5, xCentro, yCentro);
+                EscribirCirculo(document, datos.MedioEntero == 6, xIniciativa, yIniciativa);
+                EscribirCirculo(document, datos.MedioEntero == 7, xFeria, yFeria);
+                EscribirCirculo(document, datos.MedioEntero == 8, xBolsa, yBolsa);
+                EscribirCirculo(document, datos.MedioEntero == 9, xConocido, yConocido);
 
                 //=========================================
                 // TELEFONOS
@@ -318,8 +359,8 @@ namespace API.Seguridad.Controllers
                 // ÚLTIMO EMPLEO
                 //=========================================
 
-                EscribirCirculo(document, datos.Gobierno,85,360);
-                EscribirCirculo(document, datos.Privada,160,360);
+                EscribirCirculo(document, datos.Gobierno,70,360);
+                EscribirCirculo(document, datos.Privada,175,360);
 
                 Escribir(document,
                     datos.Empresa,
@@ -427,7 +468,7 @@ namespace API.Seguridad.Controllers
                 EscribirCheck(document, datos.ActaNacimiento,325,222);
                 EscribirCheck(document, datos.NoPenales,325,208);
                 EscribirCheck(document, datos.Comprobante,325,197);
-                EscribirCheck(document, datos.Cartas,325,164);
+                EscribirCheck(document, datos.Cartas,325,166);
                 EscribirCheck(document, datos.CurpActualizada,325,149);
                 EscribirCheck(document, datos.Ine,325,135);
                 EscribirCheck(document, datos.Rfc,325, 122);
