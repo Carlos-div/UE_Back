@@ -50,15 +50,10 @@ namespace API.Seguridad.Controllers
         //    if (!resultado.IsSuccess)
         //    {
         //        return BadRequest(resultado.Error);
-        //    }
-
-                var solicitud = resultado.Value;
+        //   
                 var datos = resultado.Value;
 
-            // Obtenemos datos ficticios
-            //var datos = ObtenerDatosFicticios();
-
-
+            
             using var memoria = new MemoryStream();
 
             using var reader = new PdfReader(plantilla);
@@ -125,7 +120,7 @@ namespace API.Seguridad.Controllers
             // ESCOLARIDAD
 
             float xEscolaridad = 100;
-            float xDocumento = 455;
+            float xDocumento = 445;
             float yEscolaridad = 408;
 
 
@@ -241,27 +236,27 @@ namespace API.Seguridad.Controllers
                 // SEXO
                 //=========================================
 
-                // H
-                EscribirCirculo(document,
-                    datos.Sexo == "H",
-                    305,
-                    626);
+                var sexo = datos.Sexo?.ToUpper() ?? "";
 
-                // M
                 EscribirCirculo(document,
-                    datos.Sexo == "M",
-                    348,
-                    624);
+                    sexo.StartsWith("F") || sexo == "0",
+                    340,
+                    562);
+
+                EscribirCirculo(document,
+                    sexo.StartsWith("M") || sexo == "1",
+                    380,
+                    562);
 
                 //=========================================
                 // ESTADO CIVIL
                 //=========================================
 
                 EscribirCirculo(document, datos.EstadoCivil=="Soltero",107,601);
-                EscribirCirculo(document, datos.EstadoCivil=="Casado",152,592);
-                EscribirCirculo(document, datos.EstadoCivil=="Viudo",208,592);
-                EscribirCirculo(document, datos.EstadoCivil=="UnionLibre",275,592);
-                EscribirCirculo(document, datos.EstadoCivil=="Divorciado",380,592);
+                EscribirCirculo(document, datos.EstadoCivil=="Casado",152,601);
+                EscribirCirculo(document, datos.EstadoCivil=="Viudo",208,601);
+                EscribirCirculo(document, datos.EstadoCivil=="UnionLibre",275,601);
+                EscribirCirculo(document, datos.EstadoCivil=="Divorciado",380,601);
 
                 //=========================================
                 // PENSIONADO
@@ -276,7 +271,7 @@ namespace API.Seguridad.Controllers
                 // COMO SE ENTERÓ
                 //=========================================
 
-                EscribirCirculo(document, datos.MedioEntero=="Reingreso",388,566);
+                EscribirCirculo(document, datos.MedioEntero=="Reingreso",388,575);
                 EscribirCirculo(document, datos.MedioEntero=="Volante",489,566);
                 EscribirCirculo(document, datos.MedioEntero=="Reclutador",585,566);
                 EscribirCirculo(document, datos.MedioEntero=="EmpresaParticular",713,566);
@@ -323,8 +318,8 @@ namespace API.Seguridad.Controllers
                 // ÚLTIMO EMPLEO
                 //=========================================
 
-                EscribirCirculo(document, datos.Gobierno,95,360);
-                EscribirCirculo(document, datos.Privada,173,360);
+                EscribirCirculo(document, datos.Gobierno,85,360);
+                EscribirCirculo(document, datos.Privada,160,360);
 
                 Escribir(document,
                     datos.Empresa,
@@ -405,12 +400,14 @@ namespace API.Seguridad.Controllers
                 Escribir(document,
                     datos.GradoInicialMilitar,
                     xGradoInicioMilitar,
-                    yGradoInicioMilitar);
+                    yGradoInicioMilitar,
+                    8);
 
                 Escribir(document,
                     datos.GradoFinalMilitar,
                     xGradoFinalMilitar,
-                    yGradoFinalMilitar);
+                    yGradoFinalMilitar,
+                    8);
 
                 //=========================================
                 // DOCUMENTOS
@@ -430,7 +427,7 @@ namespace API.Seguridad.Controllers
                 EscribirCheck(document, datos.ActaNacimiento,325,222);
                 EscribirCheck(document, datos.NoPenales,325,208);
                 EscribirCheck(document, datos.Comprobante,325,197);
-                EscribirCheck(document, datos.Cartas,291,182);
+                EscribirCheck(document, datos.Cartas,325,164);
                 EscribirCheck(document, datos.CurpActualizada,325,149);
                 EscribirCheck(document, datos.Ine,325,135);
                 EscribirCheck(document, datos.Rfc,325, 122);
@@ -485,218 +482,5 @@ namespace API.Seguridad.Controllers
                 iText.Layout.Properties.VerticalAlignment.BOTTOM,
                 0);
         }
-        private DatosPresolicitud ObtenerDatosFicticios()
-{
-    return new DatosPresolicitud
-    {
-        Prealta = "00001234",
-
-        FechaSolicitud = new DateOnly(2025, 6, 24),
-
-        Nombre = "CARLOS",
-
-        Apellido_Paterno = "RIOS",
-
-        Apellido_Materno = "GARCIA",
-
-        Curp = "RIGC000101HMCLRS08",
-
-        Fecha_Nacimiento = new DateOnly(2000, 1, 15),
-
-        Sexo = "H",
-
-        EstadoCivil = "Soltero",
-
-        PensionadoISSEMYM = false,
-
-        MedioEntero = "BolsaTrabajo",
-
-        Calle = "AV. BENITO JUAREZ",
-
-        numero = "125",
-
-        EntreCalles = "HIDALGO Y MORELOS",
-
-        Colonia = "CENTRO",
-
-        CodigoPostal = "52000",
-
-        Estado = "MEXICO",
-
-        Municipio = "LERMA",
-
-        Casa = "7281112233",
-
-        TelefonoCelular = "7221234567",
-
-        Recado = "7229988776",
-
-        Escolaridad = "LICENCIATURA",
-
-        Concluida = true,
-
-        Trunca = false,
-
-        DocumentoEscolaridad = "TITULO",
-
-        Gobierno = false,
-
-        Privada = true,
-
-        Empresa = "OPENAI MEXICO",
-
-        DescripcionEmpresa = "DESARROLLADOR FULLSTACK",
-
-        Puesto = "PROGRAMADOR",
-
-        Jefe = "JUAN PEREZ",
-
-        TelefonoEmpresa = "5551234567",
-
-        FechaIngreso = new DateOnly(2022, 1, 10),
-
-        FechaSalida = new DateOnly(2024, 12, 15),
-
-        MotivoBaja = "MEJOR OFERTA LABORAL",
-
-        Policia = true,
-
-        Militar = true,
-
-        GradoInicioPolicia = "CABO",
-
-        GradoFinalPolicia = "SARGENTO",
-
-        GradoInicioMilitar = "PRINCIPIANTE",
-
-        GradoFinalMilitar = "MAYOR",
-
-        TarjetaEnvio = true,
-
-        Presolicitud = true,
-
-        Fotografias = true,
-
-        Croquis = true,
-
-        Referencias = true,
-
-        Dependientes = true,
-
-        Cartilla = true,
-
-        Certificado = true,
-
-        ActaNacimiento = true,
-
-        NoPenales = true,
-
-        Comprobante = true,
-
-        Cartas = false,
-
-        CurpActualizada = true,
-
-        Ine = true,
-
-        Rfc = true
-    };
-}
-        private class DatosPresolicitud
-{
-    // GENERAL
-    public string Prealta { get; set; }
-    public DateOnly FechaSolicitud { get; set; }
-
-    public string Nombre { get; set; }
-    public string Apellido_Paterno { get; set; }
-    public string Apellido_Materno { get; set; }
-
-    public string Curp { get; set; }
-    public DateOnly Fecha_Nacimiento { get; set; }
-
-    public string Sexo { get; set; }
-    public string EstadoCivil { get; set; }
-
-    public bool PensionadoISSEMYM { get; set; }
-
-    public string MedioEntero { get; set; }
-
-    // DOMICILIO
-
-    public string Calle { get; set; }
-    public string numero { get; set; }
-    public string EntreCalles { get; set; }
-
-    public string Colonia { get; set; }
-    public string CodigoPostal { get; set; }
-
-    public string Estado { get; set; }
-    public string Municipio { get; set; }
-
-    // TELEFONOS
-
-    public string Casa { get; set; }
-    public string TelefonoCelular { get; set; }
-    public string Recado { get; set; }
-
-    // ESCOLARIDAD
-
-    public string Escolaridad { get; set; }
-    public bool Concluida { get; set; }
-    public bool Trunca { get; set; }
-    public string DocumentoEscolaridad { get; set; }
-
-    // EMPLEO
-
-    public bool Gobierno { get; set; }
-    public bool Privada { get; set; }
-
-    public string Empresa { get; set; }
-    public string DescripcionEmpresa { get; set; }
-    public string Puesto { get; set; }
-
-    public string Jefe { get; set; }
-
-    public string TelefonoEmpresa { get; set; }
-
-    public DateOnly FechaIngreso { get; set; }
-    public DateOnly FechaSalida { get; set; }
-
-    public string MotivoBaja { get; set; }
-
-    // POLICIA
-
-    public bool Policia { get; set; }
-    public string GradoInicioPolicia { get; set; }
-    public string GradoFinalPolicia { get; set; }
-
-    // MILITAR
-
-    public bool Militar { get; set; }
-    public string GradoInicioMilitar { get; set; }
-    public string GradoFinalMilitar { get; set; }
-
-    // DOCUMENTOS
-
-    public bool TarjetaEnvio { get; set; }
-    public bool Presolicitud { get; set; }
-    public bool Fotografias { get; set; }
-    public bool Croquis { get; set; }
-
-    public bool Referencias { get; set; }
-    public bool Dependientes { get; set; }
-
-    public bool Cartilla { get; set; }
-    public bool Certificado { get; set; }
-    public bool ActaNacimiento { get; set; }
-    public bool NoPenales { get; set; }
-    public bool Comprobante { get; set; }
-    public bool Cartas { get; set; }
-    public bool CurpActualizada { get; set; }
-    public bool Ine { get; set; }
-    public bool Rfc { get; set; }
-        }
-
-    }  
+    }
 }
