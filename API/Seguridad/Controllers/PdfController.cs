@@ -120,7 +120,7 @@ namespace API.Seguridad.Controllers
             // ESCOLARIDAD
 
             float xEscolaridad = 100;
-            float xDocumento = 405;
+            float xDocumento = 409;
             float yEscolaridad = 408;
 
 
@@ -240,13 +240,13 @@ namespace API.Seguridad.Controllers
 
                 EscribirCirculo(document,
                     sexo.StartsWith("F") || sexo == "0",
-                    340,
-                    562);
+                    355,
+                    630);
 
                 EscribirCirculo(document,
                     sexo.StartsWith("M") || sexo == "1",
-                    380,
-                    562);
+                    375,
+                    630);
 
                 //=========================================
                 // ESTADO CIVIL
@@ -262,40 +262,40 @@ namespace API.Seguridad.Controllers
                 // CORPORACIÓN
                 //=========================================
 
-                float xCorporacion = 45;
-                float yCorporacion = 681;
+                float xCorporacion = 43;
+                float yCorporacion = 695;
 
 
                 //=========================================
                 // CÓMO SE ENTERÓ
                 //=========================================
 
-                float xReingreso = 350;
-                float yReingreso = 590;
+                float xReingreso = 320;
+                float yReingreso = 600;
 
                 float xVolante = 400;
-                float yVolante = 590;
+                float yVolante = 591;
 
                 float xReclutador = 457;
-                float yReclutador = 590;
+                float yReclutador = 591;
 
                 float xEmpresaParticular = 580;
-                float yEmpresaParticular = 590;
+                float yEmpresaParticular = 591;
 
                 float xCentro = 111;
-                float yCentro = 580;
+                float yCentro = 582;
 
                 float xIniciativa = 245;
-                float yIniciativa = 580;
+                float yIniciativa = 582;
 
                 float xFeria = 340;
-                float yFeria = 580;
+                float yFeria = 582;
 
                 float xBolsa = 402;
-                float yBolsa = 580;
+                float yBolsa = 582;
 
                 float xConocido = 580;
-                float yConocido = 580;
+                float yConocido = 582;
                 //=========================================
                 // PENSIONADO
                 //=========================================
@@ -360,7 +360,7 @@ namespace API.Seguridad.Controllers
                 //=========================================
 
                 EscribirCirculo(document, datos.Gobierno,70,360);
-                EscribirCirculo(document, datos.Privada,175,360);
+                EscribirCirculo(document, datos.Privada,173,360);
 
                 Escribir(document,
                     datos.Empresa,
@@ -468,7 +468,7 @@ namespace API.Seguridad.Controllers
                 EscribirCheck(document, datos.ActaNacimiento,325,222);
                 EscribirCheck(document, datos.NoPenales,325,208);
                 EscribirCheck(document, datos.Comprobante,325,197);
-                EscribirCheck(document, datos.Cartas,325,166);
+                EscribirCheck(document, datos.Cartas,325,168);
                 EscribirCheck(document, datos.CurpActualizada,325,149);
                 EscribirCheck(document, datos.Ine,325,135);
                 EscribirCheck(document, datos.Rfc,325, 122);
