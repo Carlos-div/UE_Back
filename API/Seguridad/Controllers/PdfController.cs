@@ -240,13 +240,13 @@ namespace API.Seguridad.Controllers
 
                 EscribirCirculo(document,
                     sexo.StartsWith("F") || sexo == "0",
-                    355,
-                    630);
+                    255,
+                    628);
 
                 EscribirCirculo(document,
                     sexo.StartsWith("M") || sexo == "1",
-                    375,
-                    630);
+                    265,
+                    628);
 
                 //=========================================
                 // ESTADO CIVIL
@@ -262,16 +262,16 @@ namespace API.Seguridad.Controllers
                 // CORPORACIÓN
                 //=========================================
 
-                float xCorporacion = 43;
-                float yCorporacion = 695;
+                float xCorporacion = 41;
+                float yCorporacion = 710;
 
 
                 //=========================================
                 // CÓMO SE ENTERÓ
                 //=========================================
 
-                float xReingreso = 320;
-                float yReingreso = 600;
+                float xReingreso = 280;
+                float yReingreso = 591;
 
                 float xVolante = 400;
                 float yVolante = 591;
