@@ -523,5 +523,149 @@ namespace API.Seguridad.Controllers
                 iText.Layout.Properties.VerticalAlignment.BOTTOM,
                 0);
         }
+        [AllowAnonymous]
+        [HttpGet("referencias/{curp}/{region}/{perfil}/{cuerpo}")]
+        public async Task<IActionResult> Referencias(
+            string curp,
+            int region,
+            int perfil,
+            string cuerpo)
+        {
+           // var resultado = await Mediator.Send(
+           //     new GetReferenciasPersonales.Query
+           //     {
+           //         Curp = curp,
+           //         Region = region,
+           //         Perfil = perfil,
+           //         CuerpoId = cuerpo
+           //     });
+
+           // if (!resultado.IsSuccess)
+           //     return BadRequest(resultado.Error);
+
+           // var datos = resultado.Value;
+
+            // Datos ficticios prueba
+            var datos = new ReferenciasPersonalesDto();
+
+            datos.Referencia1 = new ReferenciaDto
+            {
+                ApellidoPaterno = "Ríos",
+                ApellidoMaterno = "Martínez",
+                Nombre = "José Antonio",
+                Calle = "Av. Hidalgo",
+                Numero = "123",
+                EntreCalles = "Juárez y Morelos",
+                Colonia = "Centro",
+                CodigoPostal = "50000",
+                Estado = "Estado de México",
+                Municipio = "Toluca",
+                Parentesco = "Padre",
+                Telefono = "7221234567"
+            };
+
+            datos.Referencia2 = new ReferenciaDto
+            {
+                ApellidoPaterno = "López",
+                ApellidoMaterno = "García",
+                Nombre = "María Elena",
+                Calle = "Independencia",
+                Numero = "45",
+                EntreCalles = "5 de Mayo y Allende",
+                Colonia = "San Sebastián",
+                CodigoPostal = "50150",
+                Estado = "Estado de México",
+                Municipio = "Toluca",
+                Parentesco = "Tía",
+                Telefono = "7229876543"
+            };
+
+            datos.Referencia3 = new ReferenciaDto
+            {
+                ApellidoPaterno = "Pérez",
+                ApellidoMaterno = "Sánchez",
+                Nombre = "Carlos Alberto",
+                Calle = "Las Torres",
+                Numero = "890",
+                EntreCalles = "Pino Suárez y Colón",
+                Colonia = "Universidad",
+                CodigoPostal = "50200",
+                Estado = "Estado de México",
+                Municipio = "Toluca",
+                Parentesco = "Amigo",
+                Telefono = "7225558899"
+            };
+
+            // Fin de datos ficticios
+
+            var plantilla = Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "Resources",
+                "Templates",
+                "REFERENCIAS_PERSONALES.pdf");
+
+            using var memoria = new MemoryStream();
+            using var reader = new PdfReader(plantilla);
+            using var writer = new PdfWriter(memoria);
+            using var pdf = new PdfDocument(reader, writer);
+
+            var document = new Document(pdf);
+
+            DibujarReferencia(document, datos.Referencia1, 680);
+
+            DibujarReferencia(document, datos.Referencia2, 445);
+
+            DibujarReferencia(document, datos.Referencia3, 210);
+
+            document.Close();
+
+            return File(
+                memoria.ToArray(),
+                "application/pdf",
+                "REFERENCIAS_PERSONALES.pdf");
+        }
+            private void DibujarReferencia(
+            Document document,
+            ReferenciaDto r,
+            float y)
+        {
+            //==========================
+            // NOMBRE
+            //==========================
+
+            Escribir(document, r.ApellidoPaterno, 40, y - 10, 12);
+            Escribir(document, r.ApellidoMaterno, 230, y - 10, 12);
+            Escribir(document, r.Nombre, 410, y - 10, 12);
+
+            //==========================
+            // DOMICILIO
+            //==========================
+
+            Escribir(document, r.Calle, 40, y - 60, 12);
+            Escribir(document, r.Numero, 500, y - 60, 12);
+
+            Escribir(document, r.EntreCalles, 210, y - 90, 12);
+
+            Escribir(document, r.Colonia, 40, y - 130, 12);
+
+            Escribir(document, r.CodigoPostal, 200, y - 130, 12);
+
+            Escribir(document, r.Estado, 290, y - 130, 12);
+
+            Escribir(document, r.Municipio, 460, y - 130, 12);
+
+            //==========================
+            // PARENTESCO
+            //==========================
+
+            Escribir(document, r.Parentesco, 40, y - 180 , 12);
+
+            //==========================
+            // TELÉFONO
+            //==========================
+
+            Escribir(document, r.Telefono, 410, y - 180, 12);
+        }
     }
+    
 }
